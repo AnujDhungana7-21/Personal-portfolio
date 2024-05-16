@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .container {
+    @apply mx-auto max-w-full  px-3  sm:max-w-[540px]  md:max-w-[720px]  lg:max-w-[960px] xl:max-w-[1170px];
+  }
+  .main-btn {
+    @apply border rounded-2xl bg-white text-[#461959] lg:w-[150px] w-[100px];
+  }
+}
