@@ -1,69 +1,64 @@
 import React from "react";
-
+import { FiArrowRightCircle } from "react-icons/fi";
 export const Skills = () => {
+  const data = [
+    {
+      Title: "Frontend Tools and Technologies",
+      subTitle: {
+        name: ["Html", "Css", "JavaScript", "React", "Redux", "Tailwind"],
+      },
+    },
+    {
+      Title: "Backend Tools and Technologies",
+      subTitle: {
+        name: ["Node", "MongoDb", "Express", "PostMan", "RestApi", "Joi,Jwt"],
+      },
+    },
+    {
+      Title: "Other Tools and Technologies",
+      subTitle: {
+        name: ["Git", "GitHub", "Problem-solving, Teamwork"],
+      },
+    },
+  ];
+  console.log();
   return (
-    <>
-      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 grid">
-        <a href="#">
-          <img
-            class="rounded-t-lg"
-            src="/docs/images/blog/image-1.jpg"
-            alt=""
-          />
-        </a>
-        <div class="p-5">
-          <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Noteworthy technology acquisitions 2021
-            </h5>
-          </a>
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            Here are the biggest enterprise technology acquisitions of 2021 so
-            far, in reverse chronological order.
-          </p>
-          <a
-            href="#"
-            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Read more
-            <svg
-              class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 14 10"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9"
-              />
-            </svg>
-          </a>
+    <div className="bg-primary-purple">
+      <p className=" text-center  text-white font-bold text-[30px] py-4 uppercase">
+        My <span className="text-primary-orange">Skills</span>{" "}
+      </p>
+      <div className="  container ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-4 gap-4  ">
+          {data.map((el) => {
+            return (
+              <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
+                <div class="p-5">
+                  <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight  dark:text-white text-center text-primary-orange ">
+                      {el.Title}
+                    </h5>
+                  </a>
+                  <div>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                      {el.subTitle.name.map((el) => {
+                        return (
+                          <>
+                            {" "}
+                            <p className="font-bold flex gap-4 items-center">
+                              <FiArrowRightCircle />
+                              {el}
+                            </p>
+                          </>
+                        );
+                      })}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
-
-
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    <a href="#">
-        <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
-    </a>
-    <div class="p-5">
-        <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Read more
-             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-        </a>
     </div>
-</div>
-
-    </>
   );
 };
