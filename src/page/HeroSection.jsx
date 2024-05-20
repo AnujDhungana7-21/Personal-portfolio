@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 export const HeroSection = () => {
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href =
-      "https://drive.google.com/uc?export=download&id=1IW01KbXW-Rr2gM5uQOo_28vcTOk4Vi6i"; // Direct download link
+    link.href = "/Anuj_Dhungana_CV.pdf"; // Direct download link
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
