@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export const HeroSection = () => {
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/Anuj_Dhungana_CV.pdf"; // Direct download link
+    link.href = "/Anuj-CV.pdf"; 
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
