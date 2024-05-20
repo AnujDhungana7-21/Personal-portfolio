@@ -23,7 +23,7 @@ export const Skills = () => {
   ];
   console.log();
   return (
-    <div className="bg-primary-purple">
+    <div className="bg-primary-purple p-8">
       <p className=" text-center  text-white font-bold text-[30px] py-4 uppercase">
         My <span className="text-primary-orange">Skills</span>{" "}
       </p>

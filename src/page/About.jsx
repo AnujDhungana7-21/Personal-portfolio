@@ -7,7 +7,7 @@ export const About = () => {
   };
   return (
     <>
-      <div className="bg-primary-blue">
+      <div className="bg-primary-blue p-8">
         <p className=" text-center  text-white font-bold text-[30px] py-4 uppercase">
           About <span className="text-primary-orange">Me</span>
         </p>

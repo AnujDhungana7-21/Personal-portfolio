@@ -1,13 +1,18 @@
 import React from "react";
 import { About } from "./About";
 import { Skills } from "./Skills";
+import { Portfolio } from "./Portfolio";
+import { HeroSection } from "./HeroSection";
+import { Contact } from "./Contact";
 
 export const Home = () => {
   return (
     <>
-      <div className="font-bold text-center">Home Section</div>
+      <HeroSection />
       <About />
       <Skills />
+      <Portfolio />
+      <Contact />
     </>
   );
 };
