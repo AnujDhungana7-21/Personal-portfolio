@@ -1,103 +1,56 @@
-// src/ContactForm.js
-import React, { useState } from "react";
-import emailjs from "emailjs-com";
-
+import React from "react";
+import { CiLocationOn } from "react-icons/ci";
+import { FiPhoneCall } from "react-icons/fi";
+import { RiMailLine } from "react-icons/ri";
 export const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    emailjs
-      .send(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS Service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS Template ID
-        formData,
-        "YOUR_USER_ID" // Replace with your EmailJS User ID
-      )
-      .then((response) => {
-        console.log("SUCCESS!", response.status, response.text);
-        alert("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-      })
-      .catch((error) => {
-        console.error("FAILED...", error);
-        alert("Failed to send message.");
-      });
-  };
-
   return (
-    <div className="bg-primary-purple p-8">
-      <p className=" text-center  text-white font-bold text-[30px] py-4 uppercase">
-        Contact <span className="text-primary-orange">Me</span>
-      </p>
-      <form
-        onSubmit={handleSubmit}
-        className="max-w-lg mx-auto p-4 bg-white shadow-md rounded-lg"
-      >
-        <div className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="name"
-          >
-            Name:
-          </label>
+    <div className="flex flex-col items-center justify-center  bg-primary-purple text-white p-4">
+      <h1 className="text-3xl mb-8">Contact</h1>
+      <div className="flex flex-col-reverse md:flex-row w-full max-w-4xl container">
+        <div className="flex flex-col space-y-4 md:w-1/2 md:pr-8 pt-8 ">
+          <div className="flex items-center gap-2">
+            <FiPhoneCall />
+            <p>+977-9844128810</p>
+          </div>
+          <div className="flex items-center gap-2">
+            <RiMailLine />
+            <p>anuj.dhungana143@gmail.com</p>
+          </div>
+          <div className="flex items-center gap-2">
+            <CiLocationOn />
+            <p>Kathmandu, Nepal</p>
+          </div>
+        </div>
+        <form className="flex flex-col space-y-4 md:w-1/2 md:pl-8 mt-8 md:mt-0">
           <input
+            className="p-3 rounded bg-indigo-700 placeholder-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Full Name"
           />
-        </div>
-        <div className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="email"
-          >
-            Email:
-          </label>
           <input
+            className="p-3 rounded bg-indigo-700 placeholder-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Email Address"
           />
-        </div>
-        <div className="mb-6">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="message"
-          >
-            Message:
-          </label>
+          <input
+            className="p-3 rounded bg-indigo-700 placeholder-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            type="tel"
+            placeholder="Phone Number"
+          />
+          <input
+            className="p-3 rounded bg-indigo-700 placeholder-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            type="text"
+            placeholder="Subject"
+          />
           <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none"
-          />
-        </div>
-        <div className="flex items-center justify-between">
-          <button
-            type="submit"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          >
+            className="p-3 rounded bg-indigo-700 placeholder-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 h-32"
+            placeholder="Your Message"
+          ></textarea>
+          <button className="p-3 rounded bg-indigo-500 hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-300">
             Send
           </button>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 };

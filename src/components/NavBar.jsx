@@ -84,7 +84,8 @@ const NavBar = () => {
             </li>
           </ul>
           <div className="hidden lg:block">
-            <button className="main-btn">Any Project?</button>
+            <Link to="/Contact" className="main-btn">Any Project?</Link>
+            {/* <button className="main-btn">Any Project?</button> */}
           </div>
         </div>
       </div>
