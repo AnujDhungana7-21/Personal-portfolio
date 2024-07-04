@@ -5,27 +5,27 @@ export const Portfolio = () => {
     {
       title: "Job-Portel",
       image: "/job-portel.jpeg",
-      link: "https://hoomandaws.github.io/VPN-Mobile-approach/",
+      link: "https://github.com/AnujDhungana7-21",
     },
     {
       title: "E-commerce site",
       image: "/job-portel.jpeg",
-      link: "https://hoomandaws.github.io/VPN-Mobile-approach/",
+      link: "https://github.com/AnujDhungana7-21",
     },
     {
       title: "Chat-App",
       image: "/job-portel.jpeg",
-      link: "https://hoomandaws.github.io/VPN-Mobile-approach/",
+      link: "https://github.com/AnujDhungana7-21",
     },
     {
       title: "Personal-portfolio",
       image: "/job-portel.jpeg",
-      link: "https://github.com/hoomandaws/Personal-portfolio",
+      link: "https://github.com/AnujDhungana7-21",
     },
     {
       title: "Job-Portel",
       image: "/job-portel.jpeg",
-      link: "https://hoomandaws.github.io/VPN-Mobile-approach/",
+      link: "https://github.com/AnujDhungana7-21",
     },
   ];
   return (

@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { FiPhoneCall } from "react-icons/fi";
 import { RiMailLine } from "react-icons/ri";
 import Swal from "sweetalert2";
+
 export const Contact = () => {
+  const formRef = useRef(null);
+
   const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -28,10 +31,19 @@ export const Contact = () => {
         text: "Form Successfully Submitted!",
         icon: "success",
       });
+      // Clear the form inputs
+      formRef.current.reset();
+    } else {
+      Swal.fire({
+        title: "Error!",
+        text: "There was an error submitting the form.",
+        icon: "error",
+      });
     }
   };
+
   return (
-    <div className="flex flex-col items-center justify-center  bg-primary-purple text-white p-4">
+    <div className="flex flex-col items-center justify-center bg-primary-purple text-white p-4">
       <h1 className="text-3xl mb-8">Contact</h1>
       <div className="flex flex-col-reverse md:flex-row w-full max-w-4xl container">
         <div className="flex flex-col space-y-4 md:w-1/2 md:pr-8 pt-8 ">
@@ -49,6 +61,7 @@ export const Contact = () => {
           </div>
         </div>
         <form
+          ref={formRef}
           className="flex flex-col space-y-4 md:w-1/2 md:pl-8 mt-8 md:mt-0"
           onSubmit={onSubmit}
         >
@@ -68,7 +81,7 @@ export const Contact = () => {
             className="p-3 rounded bg-indigo-700 placeholder-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             type="tel"
             placeholder="Phone Number"
-            name="tel"
+            name="phone"
           />
           <input
             className="p-3 rounded bg-indigo-700 placeholder-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
